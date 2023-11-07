@@ -1,24 +1,25 @@
 function openNewWindow() {
   newWindow = window.open("https://www.example.com", "_blank", "width = 400px, height = 400px, left = 200px, top= 200px");
 }
-
+let open = document.querySelector(".open")
+let close = document.querySelector(".close")
+let foucs = document.querySelector(".foucs")
+let blur = document.querySelector(".blur")
 function closeWindow() {
-  if (newWindow) {
-    newWindow.close();
-  }
+  newWindow.close();
 }
 
 function focusWindow() {
-  if (newWindow) {
-    newWindow.focus();
-  }
+  newWindow.focus();
 }
 
 function blurWindow() {
-  if (newWindow) {
-    newWindow.blur();
-  }
+  newWindow.blur();
 }
+open.addEventListener("click", () => { openNewWindow() })
+close.addEventListener("click", () => { closeWindow() })
+foucs.addEventListener("click", () => { focusWindow() })
+blur.addEventListener("click", () => { blurWindow() })
 // ===================================================
 const bodyHeight = `height of body :${document.body.clientHeight}`;
 const browserHeight = `height of browser : ${window.innerHeight}`;
